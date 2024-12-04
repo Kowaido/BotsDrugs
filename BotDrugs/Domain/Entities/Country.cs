@@ -1,9 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+using Domain.Validators;
+
 namespace Domain.Entities
 {
     /// <summary>
     /// Справочник стран
     /// </summary>
-    public class Country : BaseEntity
+    public class Country : BaseEntity<Country>
     {
         /// <summary>
         /// Конструктор для инициализации страны с названием и кодом.
@@ -14,6 +17,8 @@ namespace Domain.Entities
         {
             Name = name;
             Code = code;
+
+            IsValied();
         }
 
         /// <summary>
@@ -29,10 +34,16 @@ namespace Domain.Entities
         // Навигационное свойство для связи с препаратами
         public ICollection<Drug> Drugs { get; private set; } = new List<Drug>();
 
-        private bool IsValied()
+        private void IsValied()
         {
+            var validator = new CountryValidator();
+            var res = validator.Validate(this);
 
-            return true;
+            if (!res.IsValid)
+            {
+                var errors = string.Join("", res.Errors.Select(x => x.ErrorMessage));
+                throw new ValidationException(errors);
+            }
         }
     }
 }

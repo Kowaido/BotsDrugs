@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "0oN0lrmK8Qs=",
+  "dgSpecHash": "KQHmSMfY+eo=",
   "success": true,
   "projectFilePath": "C:\\315 группа\\BotDrugs\\BotDrugs\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\certe\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512"
+    "C:\\Users\\certe\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",
+    "C:\\Users\\certe\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512"
   ],
   "logs": []
 }
