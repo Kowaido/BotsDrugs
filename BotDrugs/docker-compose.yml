@@ -1,0 +1,6 @@
+﻿services:
+  infrastruction:
+    image: infrastruction
+    build:
+      context: .
+      dockerfile: Infrastruction/Dockerfile
